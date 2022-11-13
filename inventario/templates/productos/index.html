@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+<title>{% block title  %}Lista de productos{% endblock %}</title>
+
+{%block contenido %}
+
+ <div class="card">
+    <div class="card-header">
+        Listar Productos
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Productos</h4>
+        
+    </div>
+    <div class="card-footer text-muted">
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th >ID</th>
+                        <th >Producto</th>
+                        <th >Imagen</th>
+                        <th >Descripción</th>
+                        <th >Acciones</th>
+                    </tr>
+                </thead>
+                    <tr class="">
+                        <td >1</td>
+                        <td>Nombre de producto</td>
+                        <td>imagen.jpg</td>
+                        <td>Descripcion del producto</td>
+                        <td>Editar | Borrar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+{%endblock%}       
