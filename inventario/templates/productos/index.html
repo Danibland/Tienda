@@ -6,7 +6,7 @@
 
  <div class="card">
     <div class="card-header">
-        Listar Productos
+        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar producto</a>
     </div>
     <div class="card-body">
         <h4 class="card-title">Productos</h4>
@@ -21,16 +21,24 @@
                         <th >Producto</th>
                         <th >Imagen</th>
                         <th >Descripción</th>
-                        <th >Acciones</th>
+                        <th >Precio</th>
                     </tr>
                 </thead>
-                    <tr class="">
+
+                </tbody>
+
+               
+                    <tr>
                         <td >1</td>
                         <td>Nombre de producto</td>
                         <td>imagen.jpg</td>
                         <td>Descripcion del producto</td>
-                        <td>Editar | Borrar</td>
+                        <td>$</td>
+                        <td><a name="" id="" class="btn btn-info" href="{%url 'editar'%}" role="button">Editar</a>
+                             |
+                            <a name="" id="" class="btn btn-danger" href="#" role="button">Borrar</a></td>
                     </tr>
+                    
                 </tbody>
             </table>
         </div>

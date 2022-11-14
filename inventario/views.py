@@ -1,14 +1,22 @@
-from django.shortcuts import render
-from inventario.models import productos
 from django.http import HttpResponse
+from django.shortcuts import render
+
+from inventario.models import productos
+
+from .models import productos
+
 
 # Create your views here.
 def saludo(request):
-    mensaje= "<h1>hola loca</h1>"
-    return HttpResponse(mensaje)
+    return render(request,'paginas/inicio.html')
 
-def nosotros(request):
-    return render(request,'paginas/nosotros.html')
+def producto(request):
+   
+    return render(request,'productos/index.html',)
 
-def productos(request):
-    return render(request,'productos/index.html')
+def crear_producto(request):
+    return render(request,'productos/crear.html')
+
+def editar(request):
+    return render(request,'productos/editar.html')
+    
