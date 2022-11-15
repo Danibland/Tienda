@@ -1,8 +1,5 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
-from inventario.models import productos
-
 from .models import productos
 
 
@@ -11,7 +8,8 @@ def saludo(request):
     return render(request,'paginas/inicio.html')
 
 def producto(request):
-   
+    producto = productos.objects.all()
+    print(producto)
     return render(request,'productos/index.html',)
 
 def crear_producto(request):
