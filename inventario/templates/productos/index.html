@@ -4,6 +4,7 @@
 
 {%block contenido %}
 
+
  <div class="card">
     <div class="card-header">
         <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar producto</a>
@@ -16,29 +17,30 @@
         <div class="table-responsive">
             <table class="table table-primary">
                 <thead>
-                    <tr>
-                        <th >ID</th>
+                    <tr>                      
                         <th >Producto</th>
                         <th >Imagen</th>
-                        <th >Descripción</th>
                         <th >Precio</th>
                     </tr>
                 </thead>
 
                 </tbody>
 
-               
+                    {% for Productos  in producto  %}
                     <tr>
-                        <td >1</td>
-                        <td>Nombre de producto</td>
-                        <td>imagen.jpg</td>
-                        <td>Descripcion del producto</td>
-                        <td>$</td>
+                        <td>{{Productos.producto}}</td>
+                        <td>
+                        <img src="{{Productos.imagen.url}}" height="150" >
+
+                            
+                        
+                        </td>
+                        <td>${{Productos.precio}}</td>
                         <td><a name="" id="" class="btn btn-info" href="{%url 'editar'%}" role="button">Editar</a>
                              |
                             <a name="" id="" class="btn btn-danger" href="#" role="button">Borrar</a></td>
                     </tr>
-                    
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -46,4 +48,4 @@
     </div>
 </div>
 
-{%endblock%}       
+{%endblock%}     
