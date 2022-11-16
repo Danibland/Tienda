@@ -1,20 +1,67 @@
 {% extends 'base.html' %}
 
-<title>{% block title  %}Editar producto{% endblock %}</title>
-
 {%block contenido %}
 
 <div class="card">
-    <div class="card-header">
-        Editar info del producto
     </div>
     <div class="card-body">
-        <h4 class="card-title">Datos del producto</h4>
-        {% include 'productos/form.html'%}
+        
+        
+        <style>
+            .btn-personal{text-align: center ;width: 150px; height: 40px ;background-color: #009639; color: azure}
+        </style>
+        
+        <body >
+            <div class="col-md-7 col-lg-8">
+                <div class="container mt-3">
+        
+                    <h1 style="display-3;" ,>Datos de Envío: </h1>
+        
+                    <form class="row g-3 mt-3" action="/agregar_compra/" method="POST">{% csrf_token%}      
+        
+                        <div class="col-10">
+                            <label for="nombre_apellido" class="form-label">Nombres y Apellidos</label>
+                            <input type="text" class="form-control" name="nombre_apellido"
+                                placeholder="Digite nombres y apellidos">
+                        </div>
+        
+                        <div class="col-10">
+                            <label for="correo" class="form-label">Correo</label>
+                            <input type="text" class="form-control" name="correo" placeholder="you@example.com">
+                        </div>
+        
+                        <div class="col-10">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" name="direccion" placeholder="Digite su dirección">
+                        </div>
+        
+                        <div class="col-5">
+                            <label for="ciudad" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" name="ciudad" placeholder="Digite su ciudad">
+                        </div>
+        
+                        <div class="col-5">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" name="telefono" placeholder="Digite su telefono">
+                        </div>
+        
+                        <div class="col-primary">
+                            <input type="submit" class="btn btn-info" value="Enviar Pedido">
+                        </div>
+        
+                    </form>
+                </div>
+        
+            </div>
+        
+        </body>
     </div>
     <div class="card-footer text-muted">
        
     </div>
 </div>
 
-{%endblock%}          
+
+
+{%endblock%}  
+

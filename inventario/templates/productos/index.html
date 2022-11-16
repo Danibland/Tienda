@@ -7,7 +7,7 @@
 
  <div class="card">
     <div class="card-header">
-        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar producto</a>
+    
     </div>
     <div class="card-body">
         <h4 class="card-title">Productos</h4>
@@ -31,14 +31,10 @@
                         <td>{{Productos.producto}}</td>
                         <td>
                         <img src="{{Productos.imagen.url}}" height="150" >
-
-                            
-                        
                         </td>
                         <td>${{Productos.precio}}</td>
-                        <td><a name="" id="" class="btn btn-info" href="{%url 'editar'%}" role="button">Editar</a>
-                             |
-                            <a name="" id="" class="btn btn-danger" href="#" role="button">Borrar</a></td>
+                        <td><a name="" id="" class="btn btn-info" href="{%url 'editar'%}" role="button">Comprar</a>
+                            
                     </tr>
                     {% endfor %}
                 </tbody>
