@@ -5,15 +5,11 @@
 {%block contenido %}
 
 
- <div class="card">
+ <div class="card" style="margin-top: 30px;">
     <div class="card-header">
-    
+        <h4 class="card-title">Productos</h4>
     </div>
     <div class="card-body">
-        <h4 class="card-title">Productos</h4>
-        
-    </div>
-    <div class="card-footer text-muted">
         <div class="table-responsive">
             <table class="table table-primary">
                 <thead>
@@ -21,16 +17,16 @@
                         <th >Producto</th>
                         <th >Imagen</th>
                         <th >Precio</th>
+                        <th></th>
                     </tr>
                 </thead>
 
                 </tbody>
-
                     {% for Productos  in producto  %}
                     <tr>
                         <td>{{Productos.producto}}</td>
                         <td>
-                        <img src="{{Productos.imagen.url}}" height="150" >
+                            <img src="{{Productos.imagen.url}}" height="150" >
                         </td>
                         <td>${{Productos.precio}}</td>
                         <td><a name="" id="" class="btn btn-info" href="{%url 'editar'%}" role="button">Comprar</a>
@@ -39,8 +35,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-        </div>
-        
+        </div>        
     </div>
 </div>
 
