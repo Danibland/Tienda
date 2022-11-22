@@ -1,0 +1,48 @@
+<!doctype html>{% extends 'base.html' %}
+
+
+{%block contenido %}
+
+<div class="card" style="margin-top: 30px;">
+    <div class="card-body">
+        <style>
+            .btn-personal{text-align: center ;width: 150px; height: 40px ;background-color: #009639; color: azure}
+        </style>
+        <body >
+            <div class="col-md-12">
+                <div class="container mt-3">
+        
+                    <h1 style="display-3;" ,>LOGIN </h1>
+        
+                    <form class="row g-3 mt-3" method="POST">{% csrf_token%}      
+        
+                        <div class="col-6">
+                            <label for="nombre" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" name="" id=""
+                                placeholder="Digite su usuario">
+                        </div>
+                        <div class="col-6">
+                            <label for="tel" class="form-label">Contraseña</label>
+                            <input type="text" class="form-control" name="" id=""
+                                placeholder="Digite su contraseña">
+                        </div>
+        
+                        <div class="col-primary">
+                            <input type="submit" class="btn btn-info" value="Iniciar sesion">
+                        </div>
+                
+                    </form>
+                </div>
+        
+            </div>
+        
+        </body>
+    </div>
+    <div class="card-footer text-muted">
+       
+    </div>
+</div>
+
+
+
+{%endblock%}  

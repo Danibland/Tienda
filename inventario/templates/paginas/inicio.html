@@ -1,18 +1,44 @@
 {% extends 'base.html' %}
 
 
-<title>{% block title  %} Tienda virtual {% endblock %}</title>
+<title>{% block title  %}Lista de productos bs5-ban{% endblock %}</title>
 
 {%block contenido %}
 
-<div class="p-3 bg-light" style="margin-top: 50px;">
-        <div class="container">
-            <h1 class="display-3">Bienvenido a la tienda virtual</h1>
-           
-            <hr class="my-2">
-        </div>
+
+
+ <div class="card" style="margin-top: 30px;">
+    <div class="card-header">
+        <h4 class="card-title">Productos</h4>
     </div>
-   
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>                      
+                        <th >Producto</th>
+                        <th >Imagen</th>
+                        <th >Precio</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                </tbody>
+                    {% for Productos  in producto  %}
+                    <tr>
+                        <td>{{Productos.producto}}</td>
+                        <td>
+                            <img src="{{Productos.imagen.url}}" height="150" >
+                        </td>
+                        <td>${{Productos.precio}}</td>
+                        <td><a name="" id="" class="btn btn-info" href="{%url 'editar'%}" role="button">Comprar</a>
+                            
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>        
+    </div>
 </div>
 
-{%endblock%}      
+{%endblock%}    

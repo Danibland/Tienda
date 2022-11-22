@@ -10,7 +10,9 @@ from django.template.loader import get_template
 
 
 def saludo(request):
-    return render(request,'paginas/inicio.html')
+    producto=productos.objects.all()
+    """return render(request,'paginas/inicio.html')"""
+    return render(request,'productos/index.html',{'producto':producto})
 
 def producto(request):
     producto=productos.objects.all()
@@ -32,8 +34,8 @@ def send_email(nombre, correo, direccion, ciudad, tel):
     content = template.render(contexto)
     
     email = EmailMultiAlternatives(
-        'Titulo cacorreo',
-        'cuerpo cacorreo',
+        'Titulo correo',
+        'cuerpo correo',
         settings.EMAIL_HOST_USER,
         [correo]
     )
@@ -41,6 +43,7 @@ def send_email(nombre, correo, direccion, ciudad, tel):
     email.attach_alternative(content, 'text/html')
     email.send()
     print('envió el cacorreo')
+    
 
 def editar(request):
     
@@ -53,5 +56,8 @@ def editar(request):
         send_email(nombre, email, direccion, ciudad, tel)
     
     return render(request,'productos/editar.html')
+
+def login(request):
+    return render(request,'Registration/login.html')
 
 
