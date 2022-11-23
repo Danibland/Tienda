@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{%block contenido %}
+
+<div class="card" style="margin-top: 30px;">
+    <div class="card-body">
+        <style>
+            .btn-personal{text-align: center ;width: 150px; height: 40px ;background-color: #009639; color: azure}
+        </style>
+        <body >
+            <div class="col-md-12">
+                <div class="container mt-3">
+        
+                    <h1 style="display-3;" ,>Datos de Envío: </h1>
+        
+                    <form class="row g-3 mt-3" method="POST">{% csrf_token%}      
+        
+                        <div class="col-12">
+                            <label for="nombre" class="form-label">Nombres y Apellidos</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre"
+                                placeholder="Digite nombres y apellidos">
+                        </div>
+        
+                        <div class="col-12">
+                            <label for="email" class="form-label">Correo</label>
+                            <input type="text" class="form-control" name="email" id="email"
+                            placeholder="you@example.com">
+                        </div>
+        
+                        <div class="col-12">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" name="direccion" id="direccion"
+                            placeholder="Digite su dirección">
+                        </div>
+        
+                        <div class="col-6">
+                            <label for="ciudad" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" name="ciudad" id='ciudad' placeholder="Digite su ciudad">
+                        </div>
+        
+                        <div class="col-6">
+                            <label for="tel" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" name="tel" id="tel"
+                                placeholder="Digite su telefono">
+                        </div>
+        
+                        <div class="col-primary">
+                            <input type="submit" class="btn btn-info" value="Enviar Pedido">
+                        </div>
+                
+                    </form>
+                </div>
+        
+            </div>
+        
+        </body>
+    </div>
+    <div class="card-footer text-muted">
+       
+    </div>
+</div>
+
+
+
+{%endblock%}  
+
